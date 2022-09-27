@@ -1,102 +1,198 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
 body {
     margin: 0;
     background-color: #FFFBF9;
+    min-height: 100vh;
+    letter-spacing: .05em;
+    font-family: 'Poppins', sans-serif;
 }
 
-#content {
+.container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    min-height: 100vh; 
+    justify-content: flex-start;
+}
+
+.footer {
+    padding: .75rem;
+    margin-top: auto;
+    background-color: #A6C9C9;
+    color: #30332E;
+    border-top: 1px dashed #30332E;
+}
+
+.footer p {
+    text-align: center;
 }
 
 #mainBody {
     display: flex;
     flex-direction: column;
-    margin: 3em 1em;
-    flex-basis: 85%;
+    align-items: center;
+    margin: 0 1.5em;
+    flex-basis: 80%;
+    padding: 2rem 4rem;
 }
 
 #title {
-    border-left: 1px dashed #FE5F55;
+    border-left: 1px dashed transparent;
     background-color: #FFFBF9;
-    padding: .5em;
-    margin-bottom: .5em;
+    /* padding-bottom: 2rem; */
 }
 
-.homeContent {
-    margin: .5em 0;
-    background-color: #FFFBF9;
-    border-left: 1px dashed #FE5F55;
-    padding: .5em;
+#title p {
+    font-family: 'Satisfy', cursive;
+    color: #30332E;
+    transform: rotate(-5deg);
+    padding-bottom: 1em;
+    padding-left: 1em;
+    text-decoration: underline wavy #F8D53A;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 3px;
 }
 
 header {
-    flex-basis: 15%;
-    height: 100vh;
-    background-color: #30332E;
+    background-color: #FE5F55;
+    border-bottom: 1px dashed #30332E;
+    display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 80px;
+    padding: 0 2em;
 } 
-
-nav {
-    display: flex;
-    flex-direction: column;
-    padding: 1em;
-}
 
 nav a {
-    color: #F8D53A;
-    padding: 5px;
-    margin: .25em 0;
-    font-family: Dosis;
+    box-sizing: border-box;
+    color: #30332E;
+    padding: .75em 1em;
+    border-right: .5px solid #30332E;
+    font-family: 'Poppins', sans-serif;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 1em;
+    letter-spacing: .1em;
     text-decoration: none;
-    border: 1px solid transparent;
+    transition: color 350ms ease-in-out;
 } 
+
+nav a:last-child {
+    border-right: none;
+    padding-right: 0;
+}
 
 nav a:hover {
     color: #A6C9C9;
-    transition: .5s;
-    
+}
+
+nav a:active {
+    color: #F8D53A;
 }
 
 h1 {
-    font-family: Montserrat;
+    font-family: 'Montserrat', sans-serif;
     font-size: 3em;
     color: #FE5F55;
-    letter-spacing: 5px;
     margin: 0;
-}
-
-h1:hover {
-    color: #A6C9C9;
-    transition: .5s;
+    letter-spacing: 10px;
+    padding-bottom: 2rem;
 }
 
 h2 {
-    font-family: Montserrat;
+    font-family: 'Montserrat', sans-serif;
     color: #30332E;
-    letter-spacing: 5px;
-    margin: 0;
+    font-size: 2em;
+    padding-bottom: 1rem;
 }
 
 p {
     margin: 0;
-    font-family: Montserrat;
+    font-weight: 300;
+    font-size: 1.15em;
     color: #30332E;
     padding: 0;
     text-align: justify;
+    line-height: 1.25;
 }
 
-
-
-#technologies {
-    margin-left: 50px;
+span {
+    color: #FE5F55;
 }
 
 #kIcon {
-    height: 100px;
-    padding: 1em;
+    height: 60px;
+    transition: transform .5s ease-in-out;
+}
+
+#kIcon:hover {
+    transform: scale(1.05);
+}
+
+.github {
+    height: 32px;
+}
+
+.selfie {
+    border-radius: 2%;
+    border: 1px solid #30332E;
+    padding: 0;
+    max-height: 250px;
+}
+
+.bio {
+    margin-left: 2em;
+}
+
+.about-text {
+    display: flex;
+    justify-content: space-evenly;
 }
 
 i {
